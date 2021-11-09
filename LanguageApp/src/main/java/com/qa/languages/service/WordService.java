@@ -32,6 +32,10 @@ public class WordService {
 //			return false;
 //		}
 
+	public WordConstruct updatePriority(@PathVariable Integer word_id, @RequestBody WordConstruct www) {
+		return this.wordList.set(word_id, www);
+	}
+
 	public WordConstruct searchforWordWithID(@PathVariable Integer wordId) {
 		return this.wordList.get(wordId);
 	}

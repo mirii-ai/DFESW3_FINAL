@@ -26,6 +26,16 @@ public class WordServiceDB extends WordService {
 		}
 	}
 
+//	public WordConstruct returnWord(String word) {
+//		Optional<WordConstruct> optionalWord = this.repo.Optional.ofNullable(word);
+//		if (optionalWord.isPresent()) {
+//			WordConstruct returnedWord = optionalWord.get();
+//			return returnedWord;
+//		} else {
+//			throw new EntityNotFoundException("No word matching your query has been found.");
+//		}
+//	}
+
 	// Enables the user to set the boolean MemorisedWord to true (or whatever the
 	// user changes it to)
 	@Override
@@ -33,6 +43,13 @@ public class WordServiceDB extends WordService {
 		WordConstruct toUpdate = this.returnWordID(word_id);
 		toUpdate.setMemorisedWord(w.isMemorisedWord());
 		return this.repo.save(toUpdate);
+	}
+
+	@Override
+	public WordConstruct updatePriority(Integer word_id, WordConstruct www) {
+		WordConstruct toPrioritise = this.returnWordID(word_id);
+		toPrioritise.setPriorityWord(www.isPriorityWord());
+		return this.repo.save(toPrioritise);
 	}
 
 }

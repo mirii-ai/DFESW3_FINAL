@@ -20,7 +20,7 @@ public class WordController {
 
 	private WordService service;
 
-	@Autowired // change later once added the Service class
+	@Autowired
 	public WordController(WordService service) {
 		super();
 		this.service = service;
@@ -32,12 +32,12 @@ public class WordController {
 		return new ResponseEntity<WordConstruct>(newItem, HttpStatus.CREATED);
 	}
 
-	@GetMapping("/retrieve/{word_id}") // search by word
+	@GetMapping("/retrieve/{word_id}") // search by word id
 	public WordConstruct returnWordID(@PathVariable Integer word_id) {
 		return this.service.searchforWordWithID(word_id);
 	}
 
-	@GetMapping("/retrieve/{wordSearch}") // search by word
+	@GetMapping("/retrieve/{wordSearch}") // search by word string
 	public WordConstruct returnWord(@PathVariable String wordSearch) {
 		return this.service.searchForWord(wordSearch);
 	}
@@ -47,5 +47,10 @@ public class WordController {
 	// no ability to change to null
 	public ResponseEntity<WordConstruct> updateMemorised(@PathVariable Integer word_id, @RequestBody WordConstruct w) {
 		return new ResponseEntity<WordConstruct>(this.service.updateMemoriseWord(word_id, w), HttpStatus.ACCEPTED);
+	}
+
+	@PatchMapping("/priority/{word_id}")
+	public ResponseEntity<WordConstruct> updatePriority(@PathVariable Integer word_id, @RequestBody WordConstruct www) {
+		return new ResponseEntity<WordConstruct>(this.service.updatePriority(word_id, www), HttpStatus.ACCEPTED);
 	}
 }
