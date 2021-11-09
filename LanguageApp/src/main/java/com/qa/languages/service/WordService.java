@@ -44,4 +44,11 @@ public class WordService {
 		int indexOfWord = wordList.indexOf(wordSearch);
 		return this.wordList.get(indexOfWord);
 	}
+
+	public boolean deleteWord(@PathVariable Integer word_id) {
+		WordConstruct toDelete = this.wordList.get(word_id);
+		this.wordList.remove(word_id.intValue());
+		return !this.wordList.contains(toDelete);
+
+	}
 }

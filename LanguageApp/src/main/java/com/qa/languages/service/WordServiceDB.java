@@ -52,4 +52,10 @@ public class WordServiceDB extends WordService {
 		return this.repo.save(toPrioritise);
 	}
 
+	@Override
+	public boolean deleteWord(Integer word_id) {
+		this.repo.deleteById(word_id);
+		return !this.repo.existsById(word_id);
+	}
+
 }

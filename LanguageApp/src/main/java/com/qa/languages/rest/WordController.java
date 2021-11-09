@@ -3,6 +3,7 @@ package com.qa.languages.rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -52,5 +53,15 @@ public class WordController {
 	@PatchMapping("/priority/{word_id}")
 	public ResponseEntity<WordConstruct> updatePriority(@PathVariable Integer word_id, @RequestBody WordConstruct www) {
 		return new ResponseEntity<WordConstruct>(this.service.updatePriority(word_id, www), HttpStatus.ACCEPTED);
+	}
+
+	@DeleteMapping("/delete/{word_id}")
+	public ResponseEntity<?> deleteWord(@PathVariable Integer word_id) {
+		boolean beenRemoved = this.service.deleteWord(word_id);
+		if (beenRemoved) {
+			return new ResponseEntity<>("Removed from your list.", HttpStatus.NO_CONTENT);
+		} else {
+			return new ResponseEntity<>("Execution of deletion failed", HttpStatus.EXPECTATION_FAILED);
+		}
 	}
 }
