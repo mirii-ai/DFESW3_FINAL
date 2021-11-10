@@ -78,4 +78,14 @@ public class WordController {
 		return new ResponseEntity<>(this.service.getWordsbyCategoryType(category, type), HttpStatus.OK);
 	}
 
+	@GetMapping("/priority/{inputted}")
+	public ResponseEntity<List<WordConstruct>> getWordsbyPriority(@PathVariable boolean inputted) {
+		return new ResponseEntity<>(this.service.getWordsbyPriority(inputted), HttpStatus.OK);
+	}
+
+	@GetMapping("/memorised/{inputted}")
+	public ResponseEntity<List<WordConstruct>> getWordsbyMemorised(@PathVariable boolean inputted) {
+		return new ResponseEntity<>(this.service.getWordsbyMemorised(inputted), HttpStatus.OK);
+	}
+
 }

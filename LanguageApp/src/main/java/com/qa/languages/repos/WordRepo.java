@@ -16,6 +16,12 @@ public interface WordRepo extends JpaRepository<WordConstruct, Integer> {
 
 	public List<WordConstruct> getWordBywordType(String type);
 
+	@Query("SELECT lt from LanguageTable lt WHERE lt.priorityWord=?1")
+	public List<WordConstruct> getWordBypriorityWord(boolean inputted);
+
+	@Query("SELECT lt from LanguageTable lt WHERE lt.memorisedWord=?1")
+	public List<WordConstruct> getWordBymemorisedWord(boolean inputted);
+
 	@Query("SELECT lt from LanguageTable lt WHERE lt.wordCategory=?1 and lt.wordType=?2") // passing two parameters
 	public List<WordConstruct> getWordBywordCategorywordType(String category, String type);
 

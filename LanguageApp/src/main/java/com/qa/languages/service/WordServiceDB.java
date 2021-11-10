@@ -64,6 +64,14 @@ public class WordServiceDB {
 		return this.repo.getWordBywordCategorywordType(category, type);
 	}
 
+	public List<WordConstruct> getWordsbyPriority(boolean inputted) {
+		return this.repo.getWordBypriorityWord(inputted);
+	}
+
+	public List<WordConstruct> getWordsbyMemorised(boolean inputted) {
+		return this.repo.getWordBymemorisedWord(inputted);
+	}
+
 	public WordConstruct updatePriority(Integer word_id, WordConstruct www) {
 		WordConstruct toPrioritise = this.returnWordID(word_id);
 		toPrioritise.setPriorityWord(www.isPriorityWord());
