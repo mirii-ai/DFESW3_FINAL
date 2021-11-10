@@ -67,4 +67,15 @@ public class WordController {
 		return new ResponseEntity<>(this.service.getWordsbyCategory(category), HttpStatus.OK);
 	}
 
+	@GetMapping("/type/{type}")
+	public ResponseEntity<List<WordConstruct>> getWordsByType(@PathVariable String type) {
+		return new ResponseEntity<>(this.service.getWordsbyType(type), HttpStatus.OK);
+	}
+
+	@GetMapping("/category_type/{category}_{type}")
+	public ResponseEntity<List<WordConstruct>> getWordsbyCategoryType(@PathVariable String category,
+			@PathVariable String type) {
+		return new ResponseEntity<>(this.service.getWordsbyCategoryType(category, type), HttpStatus.OK);
+	}
+
 }

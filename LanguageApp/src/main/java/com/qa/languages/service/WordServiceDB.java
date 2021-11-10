@@ -56,6 +56,14 @@ public class WordServiceDB {
 		return this.repo.getWordBywordCategory(category);
 	}
 
+	public List<WordConstruct> getWordsbyType(String type) {
+		return this.repo.getWordBywordType(type);
+	}
+
+	public List<WordConstruct> getWordsbyCategoryType(String category, String type) {
+		return this.repo.getWordBywordCategorywordType(category, type);
+	}
+
 	public WordConstruct updatePriority(Integer word_id, WordConstruct www) {
 		WordConstruct toPrioritise = this.returnWordID(word_id);
 		toPrioritise.setPriorityWord(www.isPriorityWord());
@@ -66,15 +74,5 @@ public class WordServiceDB {
 		this.repo.deleteById(word_id);
 		return !this.repo.existsById(word_id);
 	}
-
-//	public WordConstruct returnWord(String word) {
-//	Optional<WordConstruct> optionalWord = this.repo.Optional.ofNullable(word);
-//	if (optionalWord.isPresent()) {
-//		WordConstruct returnedWord = optionalWord.get();
-//		return returnedWord;
-//	} else {
-//		throw new EntityNotFoundException("No word matching your query has been found.");
-//	}
-//}
 
 }
