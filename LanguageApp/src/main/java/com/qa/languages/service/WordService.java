@@ -21,17 +21,6 @@ public class WordService {
 		return this.wordList.set(word_id, w);
 	}
 
-//	public boolean updateMemoriseWord(@PathVariable Integer word_id, @RequestBody WordConstruct w) {
-//		WordConstruct toChange = this.wordList.get(word_id);
-//		toChange.setMemorisedWord(true);
-//		if (w.isMemorisedWord() == true) {
-//			System.out.println("Word has been memorised.");
-//			return true;
-//		} else {
-//			System.out.println("Word has not yet been memorised.");
-//			return false;
-//		}
-
 	public WordConstruct updatePriority(@PathVariable Integer word_id, @RequestBody WordConstruct www) {
 		return this.wordList.set(word_id, www);
 	}
@@ -51,4 +40,20 @@ public class WordService {
 		return !this.wordList.contains(toDelete);
 
 	}
+
+//	public WordConstruct getWordsbyCategory(@PathVariable String wordSearch) {
+//		int indexOfWord = wordList.indexOf(wordSearch);
+//		return this.wordList.get(indexOfWord);
+//	}
+
+//	public boolean updateMemoriseWord(@PathVariable Integer word_id, @RequestBody WordConstruct w) {
+//	WordConstruct toChange = this.wordList.get(word_id);
+//	toChange.setMemorisedWord(true);
+//	if (w.isMemorisedWord() == true) {
+//		System.out.println("Word has been memorised.");
+//		return true;
+//	} else {
+//		System.out.println("Word has not yet been memorised.");
+//		return false;
+//	}
 }

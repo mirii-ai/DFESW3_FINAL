@@ -6,8 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "LanuageTable")
+@Entity(name = "LanguageTable")
+@Table(name = "LanguageTable")
 public class WordConstruct {
 
 	@Id // primary key identifier

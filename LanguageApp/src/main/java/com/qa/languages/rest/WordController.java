@@ -1,5 +1,7 @@
 package com.qa.languages.rest;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,16 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.languages.domain.WordConstruct;
-import com.qa.languages.service.WordService;
+import com.qa.languages.service.WordServiceDB;
 
 @RequestMapping("/word")
 @RestController
 public class WordController {
 
-	private WordService service;
+	private WordServiceDB service;
 
 	@Autowired
-	public WordController(WordService service) {
+	public WordController(WordServiceDB service) {
 		super();
 		this.service = service;
 	}
@@ -34,13 +36,8 @@ public class WordController {
 	}
 
 	@GetMapping("/retrieve/{word_id}") // search by word id
-	public WordConstruct returnWordID(@PathVariable Integer word_id) {
-		return this.service.searchforWordWithID(word_id);
-	}
-
-	@GetMapping("/retrieve/{wordSearch}") // search by word string
-	public WordConstruct returnWord(@PathVariable String wordSearch) {
-		return this.service.searchForWord(wordSearch);
+	public ResponseEntity<WordConstruct> returnWordID(@PathVariable Integer word_id) {
+		return new ResponseEntity<WordConstruct>(this.service.searchforWordWithID(word_id), HttpStatus.OK);
 	}
 
 	@PatchMapping("/memorised/{word_id}") // patch mapping- updates not puts. you don't change the data, updating things
@@ -64,4 +61,10 @@ public class WordController {
 			return new ResponseEntity<>("Execution of deletion failed", HttpStatus.EXPECTATION_FAILED);
 		}
 	}
+
+	@GetMapping("/category/{category}")
+	public ResponseEntity<List<WordConstruct>> getWordsByCategory(@PathVariable String category) {
+		return new ResponseEntity<>(this.service.getWordsbyCategory(category), HttpStatus.OK);
+	}
+
 }
