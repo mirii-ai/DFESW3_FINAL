@@ -88,8 +88,8 @@ public class WordServiceDB {
 		return this.repo.findAllBy();
 	}
 
-//	public List<Object[]> getForeignWords() {
-//		return this.repo.findforeignWords();
+//	public List<LimitReturn> findWordsLimitedTo() {
+//		return this.repo.findAllByLimit();
 //	}
 
 }

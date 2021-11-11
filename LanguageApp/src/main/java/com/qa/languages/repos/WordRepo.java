@@ -31,6 +31,7 @@ public interface WordRepo extends JpaRepository<WordConstruct, Integer> {
 
 	List<ForeignWordEntry> findAllBy(); // returns ForeignWord, WordType, Category only (but returns all)
 
-	// random entries limit keyword - research sql random
-
+	// random entries limit keyword - research sql random DOES NOT WORK BUT I TRIED
+//	@Query(value = "SELECT lt FROM LanguageTable lt LIMIT", nativeQuery = true)
+//	List<LimitReturn> findAllByLimit();
 }

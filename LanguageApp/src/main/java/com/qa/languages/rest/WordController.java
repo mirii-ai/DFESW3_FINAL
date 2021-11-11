@@ -94,9 +94,9 @@ public class WordController {
 		return new ResponseEntity<List<ForeignWordEntry>>(this.service.getForeignWords(), HttpStatus.OK);
 	}
 
-//	@GetMapping("/return/foreignWords")
-//	public ResponseEntity<List<Object[]>> getForeignWords() {
-//		return new ResponseEntity<List<Object[]>>(this.service.getForeignWords(), HttpStatus.OK);
+//	@GetMapping("/return/limitlist")
+//	public ResponseEntity<List<LimitReturn>> findWordsLimitedTo() {
+//		return new ResponseEntity<List<LimitReturn>>(this.service.findWordsLimitedTo(), HttpStatus.OK);
 //	}
 
 }
