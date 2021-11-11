@@ -49,6 +49,12 @@ public class WordConstruct {
 		super();
 	}
 
+	public WordConstruct(Integer Id, String foreignWord) {
+		super();
+		this.Id = Id;
+		this.foreignWord = foreignWord;
+	}
+
 	public Integer getId() {
 		return Id;
 	}

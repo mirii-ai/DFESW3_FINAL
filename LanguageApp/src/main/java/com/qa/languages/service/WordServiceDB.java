@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.qa.languages.domain.WordConstruct;
+import com.qa.languages.repos.ForeignWordEntry;
 import com.qa.languages.repos.WordRepo;
 
 @Service
@@ -82,5 +83,13 @@ public class WordServiceDB {
 		this.repo.deleteById(word_id);
 		return !this.repo.existsById(word_id);
 	}
+
+	public List<ForeignWordEntry> getForeignWords() {
+		return this.repo.findAllBy();
+	}
+
+//	public List<Object[]> getForeignWords() {
+//		return this.repo.findforeignWords();
+//	}
 
 }

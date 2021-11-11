@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.languages.domain.WordConstruct;
+import com.qa.languages.repos.ForeignWordEntry;
 import com.qa.languages.service.WordServiceDB;
 
 @RequestMapping("/word")
@@ -87,5 +88,15 @@ public class WordController {
 	public ResponseEntity<List<WordConstruct>> getWordsbyMemorised(@PathVariable boolean inputted) {
 		return new ResponseEntity<>(this.service.getWordsbyMemorised(inputted), HttpStatus.OK);
 	}
+
+	@GetMapping("/return/foreignWords")
+	public ResponseEntity<List<ForeignWordEntry>> getForeignWords() {
+		return new ResponseEntity<List<ForeignWordEntry>>(this.service.getForeignWords(), HttpStatus.OK);
+	}
+
+//	@GetMapping("/return/foreignWords")
+//	public ResponseEntity<List<Object[]>> getForeignWords() {
+//		return new ResponseEntity<List<Object[]>>(this.service.getForeignWords(), HttpStatus.OK);
+//	}
 
 }
