@@ -74,8 +74,12 @@ combinations I could put in to really enhance the search results given back to t
 <p></p>
 
 <p>o	Screenshot of your test results, including coverage report.</p>
-![image](https://user-images.githubusercontent.com/56605032/141503373-5a1f0707-0b2c-4a2f-b8c1-97366cfb4050.png)
-
+<p>COVERAGE REPORT</p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141503373-5a1f0707-0b2c-4a2f-b8c1-97366cfb4050.png)</p>
+<p>SCREENSHOT OF TESTS</p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141507744-54eed7bd-ad33-4873-95a9-b87a65dfddbd.png)</p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141507807-eb58f81d-142f-4001-89aa-08555ae71a26.png)
+</p>
 <p></p>
 <p><b>o	Link to Jira Board - You must add Ed as collaborators on your Jira board.</b></p>
 <p>https://ameliasommer.atlassian.net/jira/software/projects/DFS/boards/3/backlog</p>
