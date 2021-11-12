@@ -1,0 +1,111 @@
+{
+    "foreignWord": "awareru",
+    "wordType" : "verb",
+    "wordTranslation" : "to appear",
+    "wordCategory" : "everyday",
+    "priorityWord" : false
+}
+{
+    "foreignWord": "kankyou",
+    "wordType" : "noun",
+    "wordTranslation" : "environment",
+    "wordCategory" : "environment",
+    "priorityWord" : false
+}
+{
+    "foreignWord": "seifu",
+    "wordType" : "noun",
+    "wordTranslation" : "government",
+    "wordCategory" : "politics",
+    "priorityWord" : true
+}
+{
+    "foreignWord": "seiji",
+    "wordType" : "noun",
+    "wordTranslation" : "politics",
+    "wordCategory" : "politics",
+    "priorityWord" : true
+}
+{
+    "foreignWord": "zetsumetsu suru",
+    "wordType" : "verb",
+    "wordTranslation" : "to be extinct",
+    "wordCategory" : "environment",
+    "priorityWord" : true
+}
+{
+    "foreignWord": "zetsumetsu kigusha",
+    "wordType" : "noun",
+    "wordTranslation" : "endangered species",
+    "wordCategory" : "environment",
+    "priorityWord" : true
+}
+{
+    "foreignWord": "migamaeru",
+    "wordType" : "verb",
+    "wordTranslation" : "to be on guard",
+    "wordCategory" : "everyday",
+    "priorityWord" : true
+}
+{
+    "foreignWord": "misueru",
+    "wordType" : "verb",
+    "wordTranslation" : "to set one's eyes on/ to make sure of/ to focus on",
+    "wordCategory" : "everyday",
+    "priorityWord" : true
+}
+{
+    "foreignWord": "fumikomu",
+    "wordType" : "verb",
+    "wordTranslation" : "to step into/ to break into",
+    "wordCategory" : "everyday",
+    "priorityWord" : false
+}
+{
+    "foreignWord": "hisomu",
+    "wordType" : "verb",
+    "wordTranslation" : "to lurk/ to be hidden/ to be concealed",
+    "wordCategory" : "everyday",
+    "priorityWord" : true
+}
+{
+    "foreignWord": "hakarau",
+    "wordType" : "verb",
+    "wordTranslation" : "to manage/ to arrange",
+    "wordCategory" : "everyday",
+    "priorityWord" : true
+}
+{
+    "foreignWord": "kettaku",
+    "wordType" : "noun",
+    "wordTranslation" : "conspiracy",
+    "wordCategory" : "everyday",
+    "priorityWord" : true
+}
+{
+    "foreignWord": "akogareru",
+    "wordType": "verb",
+    "wordTranslation": "to long for/ to yearn for",
+    "wordCategory": "everyday",
+    "priorityWord": true
+}
+{
+    "foreignWord": "sakashii",
+    "wordType": "adj",
+    "wordTranslation": "intelligent/clever",
+    "wordCategory": "everyday",
+    "priorityWord": true
+}
+{
+    "foreignWord": "yosomisuru",
+    "wordType": "verb",
+    "wordTranslation": "to look away",
+    "wordCategory": "everyday",
+    "priorityWord": false
+}
+
+INTEGRATION TEST:
+"kettaku", "noun", "conspiracy", "everyday", true
+1, "sakashii", "adj", "intelligent/clever", "everyday", true,false
+UNIT TEST WORDSERVICEDB:
+1, "yosomisuru", "verb", "to look away", "everyday", true, false
