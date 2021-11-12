@@ -14,6 +14,8 @@ public interface WordRepo extends JpaRepository<WordConstruct, Integer> {
 //	@Query("SELECT lt from LanguageTable lt WHERE lt.category=?1") // passing one parameter
 	public List<WordConstruct> getWordBywordCategory(String category);
 
+	public List<WordConstruct> getWordByforeignWord(String foreignWord);
+
 	public List<WordConstruct> getWordBywordType(String type);
 
 	@Query("SELECT lt from LanguageTable lt WHERE lt.priorityWord=?1") // returns by search priority (ie. if 'true' or
@@ -30,6 +32,9 @@ public interface WordRepo extends JpaRepository<WordConstruct, Integer> {
 	public List<WordConstruct> getWordBywordCategorywordType(String category, String type);
 
 	List<ForeignWordEntry> findAllBy(); // returns ForeignWord, WordType, Category only (but returns all)
+
+	@Query("SELECT lt from LanguageTable lt WHERE lt.wordCategory=?1 and lt.priorityWord=?2")
+	public List<WordConstruct> getWordBywordCategorywordPriority(String category, boolean priority);
 
 	// random entries limit keyword - research sql random DOES NOT WORK BUT I TRIED
 //	@Query(value = "SELECT lt FROM LanguageTable lt LIMIT", nativeQuery = true)

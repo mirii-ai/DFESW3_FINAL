@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,9 +37,26 @@ public class WordController {
 		return new ResponseEntity<WordConstruct>(newItem, HttpStatus.CREATED);
 	}
 
+	@GetMapping("/retrieveAll") // retrieves all
+	public ResponseEntity<List<WordConstruct>> returnAllWords() {
+		return ResponseEntity.ok(this.service.returnAllWords());
+	}
+
+	@GetMapping("/retrieveForeignWord/{foreignWord}") // search for information by the foreign word entry
+	public ResponseEntity<List<WordConstruct>> getForeignWord(@PathVariable String foreignWord) {
+		return new ResponseEntity<List<WordConstruct>>(this.service.getForeignWord(foreignWord), HttpStatus.OK);
+	}
+
 	@GetMapping("/retrieve/{word_id}") // search by word id
 	public ResponseEntity<WordConstruct> returnWordID(@PathVariable Integer word_id) {
 		return new ResponseEntity<WordConstruct>(this.service.searchforWordWithID(word_id), HttpStatus.OK);
+	}
+
+	@PutMapping("/change/element/{word_id}") // can change any element of an entry
+	public ResponseEntity<WordConstruct> replaceWordElements(@PathVariable Integer word_id,
+			@RequestBody WordConstruct newWord) {
+		return new ResponseEntity<WordConstruct>(this.service.replaceWordElements(word_id, newWord),
+				HttpStatus.ACCEPTED);
 	}
 
 	@PatchMapping("/memorised/{word_id}") // patch mapping- updates not puts. you don't change the data, updating things
@@ -89,14 +107,16 @@ public class WordController {
 		return new ResponseEntity<>(this.service.getWordsbyMemorised(inputted), HttpStatus.OK);
 	}
 
-	@GetMapping("/return/foreignWords")
+	@GetMapping("/return/foreignWords") // returns foreign words without English translation
 	public ResponseEntity<List<ForeignWordEntry>> getForeignWords() {
 		return new ResponseEntity<List<ForeignWordEntry>>(this.service.getForeignWords(), HttpStatus.OK);
 	}
 
-//	@GetMapping("/return/limitlist")
-//	public ResponseEntity<List<LimitReturn>> findWordsLimitedTo() {
-//		return new ResponseEntity<List<LimitReturn>>(this.service.findWordsLimitedTo(), HttpStatus.OK);
-//	}
+	@GetMapping("/category_priority/{category}_{priority}")
+	public ResponseEntity<List<WordConstruct>> getWordsbyCategoryPriority(@PathVariable String category,
+			@PathVariable boolean priority) {
+		return new ResponseEntity<List<WordConstruct>>(this.service.getWordsbyCategoryPriority(category, priority),
+				HttpStatus.OK);
+	}
 
 }

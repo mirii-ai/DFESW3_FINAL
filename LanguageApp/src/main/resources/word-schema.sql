@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS LanguageTable CASCADE;
+DROP TABLE IF EXISTS LanguageTable;
 
 CREATE TABLE LanguageTable
 (

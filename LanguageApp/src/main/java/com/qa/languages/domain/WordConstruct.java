@@ -45,6 +45,18 @@ public class WordConstruct {
 		this.priorityWord = priorityWord;
 	}
 
+	public WordConstruct(Integer Id, String foreignWord, String wordType, String wordTranslation, String wordCategory,
+			boolean priorityWord, boolean memorisedWord) {
+		super();
+		this.Id = Id;
+		this.foreignWord = foreignWord;
+		this.wordType = wordType;
+		this.wordTranslation = wordTranslation;
+		this.wordCategory = wordCategory;
+		this.priorityWord = priorityWord;
+		this.memorisedWord = memorisedWord;
+	}
+
 	public WordConstruct() {
 		super();
 	}

@@ -36,6 +36,10 @@ public class WordServiceDB {
 		return this.repo.save(newWord);
 	}
 
+	public List<WordConstruct> getForeignWord(String foreignWord) {
+		return this.repo.getWordByforeignWord(foreignWord);
+	}
+
 	public WordConstruct searchforWordWithID(@PathVariable Integer wordId) {
 
 		return this.repo.findById(wordId).get();
@@ -88,8 +92,24 @@ public class WordServiceDB {
 		return this.repo.findAllBy();
 	}
 
-//	public List<LimitReturn> findWordsLimitedTo() {
-//		return this.repo.findAllByLimit();
-//	}
+	public List<WordConstruct> returnAllWords() {
+		return this.repo.findAll();
+	}
+
+	public List<WordConstruct> getWordsbyCategoryPriority(String category, boolean priority) {
+		return this.repo.getWordBywordCategorywordPriority(category, priority);
+	}
+
+	public WordConstruct replaceWordElements(Integer id, WordConstruct www) {
+		WordConstruct word = this.searchforWordWithID(id);
+		word.setForeignWord(www.getForeignWord());
+		word.setWordType(www.getWordType());
+		word.setWordTranslation(www.getWordTranslation());
+		word.setWordCategory(www.getWordCategory());
+		word.setPriorityWord(www.isPriorityWord());
+		word.setMemorisedWord(www.isMemorisedWord());
+
+		return this.repo.save(word);
+	}
 
 }
