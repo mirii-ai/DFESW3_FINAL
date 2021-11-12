@@ -2,6 +2,7 @@ package com.qa.languages.rest;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 //import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
@@ -109,16 +110,30 @@ public class WordsIntegrationTest {
 		ResultMatcher checkStuff = status().isAccepted();
 		ResultMatcher checkBody = content().json(responseBodyAsJSON);
 		this.mvc.perform(replaceRequest).andExpect(checkStuff).andExpect(checkBody);
+	}
 
-//		final String responseBody = this.mapper.writeValueAsString(
-//				new WordConstruct(1, "akireru", "verb", "to be amazed/ to be shocked", "everyday", true, false));
-//		RequestBuilder request = put("/word/change/element/1").contentType(MediaType.APPLICATION_JSON)
-//				.content(responseBody);
-//
-//		ResultMatcher checkStatus = status().isAccepted();
-//		ResultMatcher checkBody = content().json(responseBody);
-//
-//		this.mvc.perform(request).andExpect(checkStatus).andExpect(checkBody);
+	@Test
+	void testGetWordsbyCategory() throws Exception {
+		RequestBuilder request = get("/word/category/everyday");
+		ResultMatcher checkStatus = status().isOk();
+		WordConstruct recovered = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true,
+				false);
+		List<WordConstruct> newList = List.of(recovered);
+		String responseBody = this.mapper.writeValueAsString(newList);
+		ResultMatcher checker = content().json(responseBody);
+		this.mvc.perform(request).andExpect(checkStatus).andExpect(checker);
+	}
+
+	@Test
+	void testGetWordsbyType() throws Exception {
+		RequestBuilder request = get("/word/type/adj");
+		ResultMatcher checkStatus = status().isOk();
+		WordConstruct recovered = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true,
+				false);
+		List<WordConstruct> newList = List.of(recovered);
+		String responseBody = this.mapper.writeValueAsString(newList);
+		ResultMatcher checker = content().json(responseBody);
+		this.mvc.perform(request).andExpect(checkStatus).andExpect(checker);
 	}
 
 	@Test
@@ -143,6 +158,64 @@ public class WordsIntegrationTest {
 		String responseBody = this.mapper.writeValueAsString(newList);
 		ResultMatcher checker = content().json(responseBody);
 		this.mvc.perform(request).andExpect(checkStatus).andExpect(checker);
+	}
+
+	@Test
+	void testGetWordsbyCategoryPriority() throws Exception {
+		RequestBuilder request = get("/word/category_priority/everyday_true");
+		ResultMatcher checkStatus = status().isOk();
+		WordConstruct recovered = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true,
+				false);
+		List<WordConstruct> newList = List.of(recovered);
+		String responseBody = this.mapper.writeValueAsString(newList);
+		ResultMatcher checker = content().json(responseBody);
+		this.mvc.perform(request).andExpect(checkStatus).andExpect(checker);
+	}
+
+	@Test
+	void testGetWordsbyCategoryType() throws Exception {
+		RequestBuilder request = get("/word/category_type/everyday_adj");
+		ResultMatcher checkStatus = status().isOk();
+		WordConstruct recovered = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true,
+				false);
+		List<WordConstruct> newList = List.of(recovered);
+		String responseBody = this.mapper.writeValueAsString(newList);
+		ResultMatcher checker = content().json(responseBody);
+		this.mvc.perform(request).andExpect(checkStatus).andExpect(checker);
+	}
+
+	@Test
+	void testUpdateMemorised() throws Exception {
+		WordConstruct requestBody = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true,
+				true);
+		String requestBodyAsJSON = this.mapper.writeValueAsString(requestBody);
+		RequestBuilder replaceRequest = patch("/word/memorised/1").contentType(MediaType.APPLICATION_JSON)
+				.content(requestBodyAsJSON);
+
+		WordConstruct responseBody = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true,
+				true);
+		String responseBodyAsJSON = this.mapper.writeValueAsString(responseBody);
+
+		ResultMatcher checkStuff = status().isAccepted();
+		ResultMatcher checkBody = content().json(responseBodyAsJSON);
+		this.mvc.perform(replaceRequest).andExpect(checkStuff).andExpect(checkBody);
+	}
+
+	@Test
+	void testUpdatePriority() throws Exception {
+		WordConstruct requestBody = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", false,
+				false);
+		String requestBodyAsJSON = this.mapper.writeValueAsString(requestBody);
+		RequestBuilder replaceRequest = patch("/word/priority/1").contentType(MediaType.APPLICATION_JSON)
+				.content(requestBodyAsJSON);
+
+		WordConstruct responseBody = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", false,
+				false);
+		String responseBodyAsJSON = this.mapper.writeValueAsString(responseBody);
+
+		ResultMatcher checkStuff = status().isAccepted();
+		ResultMatcher checkBody = content().json(responseBodyAsJSON);
+		this.mvc.perform(replaceRequest).andExpect(checkStuff).andExpect(checkBody);
 	}
 
 	@Test

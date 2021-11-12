@@ -18,6 +18,9 @@ public interface WordRepo extends JpaRepository<WordConstruct, Integer> {
 
 	public List<WordConstruct> getWordBywordType(String type);
 
+	@Query("SELECT lt.Id from LanguageTable lt WHERE lt.foreignWord=?1")
+	public Integer getIdByforeignWord(String foreignWord);
+
 	@Query("SELECT lt from LanguageTable lt WHERE lt.priorityWord=?1") // returns by search priority (ie. if 'true' or
 																		// 'false')
 	public List<WordConstruct> getWordBypriorityWord(boolean inputted);

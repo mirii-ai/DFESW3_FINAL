@@ -15,9 +15,9 @@ public class WordConstruct {
 	private Integer Id; // auto increments- for database management. Doesn't have any impact on the
 						// database itself but can be used to notify user of how many entries they've
 						// submitted.
-	private String foreignWord;
+	private String foreignWord; // the word the user wants to learn
 	private String wordType; // verb, adjective, noun, adverb etc
-	private String wordTranslation;
+	private String wordTranslation; // the english word (or any translation)
 	private String wordCategory; // environment, politics, shopping etc
 	private boolean priorityWord; // boolean default false, but can be made true if user wishes
 	private boolean memorisedWord = false; // boolean memorisedWord=false , can change later. why would the user put

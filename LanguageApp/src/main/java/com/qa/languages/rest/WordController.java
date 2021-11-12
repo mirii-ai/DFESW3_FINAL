@@ -47,6 +47,11 @@ public class WordController {
 		return new ResponseEntity<List<WordConstruct>>(this.service.getForeignWord(foreignWord), HttpStatus.OK);
 	}
 
+	@GetMapping("/getIDbyWord/{foreignWord}") // returns word ID by searching the word
+	public ResponseEntity<Integer> getIdByWord(@PathVariable String foreignWord) {
+		return new ResponseEntity<Integer>(this.service.getIdByWord(foreignWord), HttpStatus.OK);
+	}
+
 	@GetMapping("/retrieve/{word_id}") // search by word id
 	public ResponseEntity<WordConstruct> returnWordID(@PathVariable Integer word_id) {
 		return new ResponseEntity<WordConstruct>(this.service.searchforWordWithID(word_id), HttpStatus.OK);
@@ -74,6 +79,16 @@ public class WordController {
 	@DeleteMapping("/delete/{word_id}")
 	public ResponseEntity<?> deleteWord(@PathVariable Integer word_id) {
 		boolean beenRemoved = this.service.deleteWord(word_id);
+		if (beenRemoved) {
+			return new ResponseEntity<>("Removed from your list.", HttpStatus.NO_CONTENT);
+		} else {
+			return new ResponseEntity<>("Execution of deletion failed", HttpStatus.EXPECTATION_FAILED);
+		}
+	}
+
+	@DeleteMapping("/delete/word/{foreignWord}")
+	public ResponseEntity<?> deleteWordByWord(@PathVariable String foreignWord) {
+		boolean beenRemoved = this.service.deleteWordByWord(foreignWord);
 		if (beenRemoved) {
 			return new ResponseEntity<>("Removed from your list.", HttpStatus.NO_CONTENT);
 		} else {
