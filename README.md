@@ -18,11 +18,16 @@ have enough time to add at the time of writing this, but hopefully I will be abl
 <p>What went well:</p>
 <p>I was able to create a basic functioning app! I have created the backend for a language revision app and none of the methods break when it runs.
 All of the integration and Unit Tests work as well which is really good for me in terms of confidence and will to tackle projects in the future.</p>
+<p></p>
+<p>It has full CRUD functionality. The user can create/add a new entry to the database, they can update/change the entry itself or certain elements (eg, priority, memorised or even change the spelling of a word if it is incorrect), they can delete entries they no longer want, and they can also return lists of entries already in the database.</p>
+<p></p>
 <p>What didn't go so well:</p>
 <p>When I get stuck, I hyperfocus on the issue so I may have lost a lot of time on areas when I could have moved on and worked on other functions
 and gone back to the problem if I had time at the end. One big issue for me was returning only a select number of columns from the database- I spent around
 six hours altogether trying to fix it, when in reality it doesn't remove any core functionality from the app so it wasn't a necessary feature.
 I need to work on what to prioritise in the future.</p>
+<p></p>
+<p>I would also like to add more features in the future. Another one that stands out to me is allowing the user to delete items from a list where every item is 'memorised', allowing the user to pick items out of their database more efficently.</p>
 <p></p>
 <p>o	Possible improvements for future revisions of the project.</p>
 <p>Adding the features I want to. One of the things I really want to work on is a method that returns a set number of results instead of everything.
