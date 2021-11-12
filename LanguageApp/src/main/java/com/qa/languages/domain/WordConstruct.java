@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+@Entity(name = "LanguageTable")
+@Table(name = "LanguageTable")
 public class WordConstruct {
 
 	@Id // primary key identifier
@@ -45,6 +47,12 @@ public class WordConstruct {
 
 	public WordConstruct() {
 		super();
+	}
+
+	public WordConstruct(Integer Id, String foreignWord) {
+		super();
+		this.Id = Id;
+		this.foreignWord = foreignWord;
 	}
 
 	public Integer getId() {
