@@ -1,4 +1,4 @@
-package com.qa.languages;
+package com.qa.languages.rest;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
@@ -25,8 +26,7 @@ import org.springframework.test.web.servlet.ResultMatcher;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.languages.domain.WordConstruct;
 
-//@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-@SpringBootTest
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 @Sql(scripts = { "classpath:word-schema.sql",
 		"classpath:word-data.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
@@ -45,7 +45,7 @@ public class WordsIntegrationTest {
 		String requestBodyAsJSON = this.mapper.writeValueAsString(requestBody);
 		RequestBuilder request = post("/word/add").contentType(MediaType.APPLICATION_JSON).content(requestBodyAsJSON);
 
-		WordConstruct responseBody = new WordConstruct(1, "kettaku", "noun", "conspiracy", "everyday", true, false);
+		WordConstruct responseBody = new WordConstruct(2, "kettaku", "noun", "conspiracy", "everyday", true, false);
 		String responseBodyAsJSON = this.mapper.writeValueAsString(responseBody);
 
 		ResultMatcher checkStatus = status().isCreated();
@@ -60,7 +60,8 @@ public class WordsIntegrationTest {
 
 		ResultMatcher checkStatus = status().isOk();
 
-		WordConstruct foundWord = new WordConstruct(1, "kettaku", "noun", "conspiracy", "everyday", true, false);
+		WordConstruct foundWord = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true,
+				false);
 		List<WordConstruct> wordList = List.of(foundWord);
 		String responseBody = this.mapper.writeValueAsString(wordList);
 
@@ -71,9 +72,10 @@ public class WordsIntegrationTest {
 
 	@Test
 	void testRetrieveForeignWord() throws Exception {
-		RequestBuilder request = get("/word/retrieveForeignWord/kettaku");
+		RequestBuilder request = get("/word/retrieveForeignWord/sakashii");
 		ResultMatcher checkStatus = status().isOk();
-		WordConstruct recovered = new WordConstruct(1, "kettaku", "noun", "conspiracy", "everyday", true, false);
+		WordConstruct recovered = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true,
+				false);
 		List<WordConstruct> newList = List.of(recovered);
 		String responseBody = this.mapper.writeValueAsString(newList);
 		ResultMatcher checker = content().json(responseBody);
@@ -120,20 +122,32 @@ public class WordsIntegrationTest {
 	}
 
 	@Test
-	void testDelete() throws Exception {
-		this.mvc.perform(delete("/word/delete/1")).andExpect(status().isNoContent());
-	}
-
-	@Test
 	void testGetWordsbyPriority() throws Exception {
 		RequestBuilder request = get("/word/priority/true");
 		ResultMatcher checkStatus = status().isOk();
-		WordConstruct recovered = new WordConstruct(1, "kettaku", "noun", "conspiracy", "everyday", true, false);
+		WordConstruct recovered = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true,
+				false);
 		List<WordConstruct> newList = List.of(recovered);
 		String responseBody = this.mapper.writeValueAsString(newList);
 		ResultMatcher checker = content().json(responseBody);
 		this.mvc.perform(request).andExpect(checkStatus).andExpect(checker);
+	}
 
+	@Test
+	void testGetWordsbyMemorise() throws Exception {
+		RequestBuilder request = get("/word/memorised/false");
+		ResultMatcher checkStatus = status().isOk();
+		WordConstruct recovered = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true,
+				false);
+		List<WordConstruct> newList = List.of(recovered);
+		String responseBody = this.mapper.writeValueAsString(newList);
+		ResultMatcher checker = content().json(responseBody);
+		this.mvc.perform(request).andExpect(checkStatus).andExpect(checker);
+	}
+
+	@Test
+	void testDelete() throws Exception {
+		this.mvc.perform(delete("/word/delete/1")).andExpect(status().isNoContent());
 	}
 // new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true, false)); //THIS IS WHAT SHOULD BE IN THE TESTS??
 }
