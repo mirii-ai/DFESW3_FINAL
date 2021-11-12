@@ -80,6 +80,7 @@ combinations I could put in to really enhance the search results given back to t
 <p>![image](https://user-images.githubusercontent.com/56605032/141507744-54eed7bd-ad33-4873-95a9-b87a65dfddbd.png)</p>
 <p>![image](https://user-images.githubusercontent.com/56605032/141507807-eb58f81d-142f-4001-89aa-08555ae71a26.png)
 </p>
+<p>There are, however, some issues with my code. Besides not having the full functionality that I had hoped at the beginning of the project, it runs reasonably well. HOWEVER, if there are duplicate entries of words in the database, some of the methods (and tests) do not run properly. The ID will always be unique as it is auto generated, but the word search function and other such methods fail when there is more than one entry of the same thing. It also causes problems when updating results too. Having the search by ID function is important in this respect because, although the 'search for id by word input' function will not work if there's more than one copy of a word in the database (how does it know what to choose?), there is still a possibility to remove the duplicate if you find its ID. This can be done through finding the ID by "retrieve All" in postman and finding the relevant word, then deleting by ID.</p>
 <p></p>
 <p><b>o	Link to Jira Board - You must add Ed as collaborators on your Jira board.</b></p>
 <p>https://ameliasommer.atlassian.net/jira/software/projects/DFS/boards/3/backlog</p>
