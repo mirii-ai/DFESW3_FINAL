@@ -49,7 +49,7 @@ public class WordServiceDBTest {
 	}
 
 	@Test
-	public void getWordsbyCategoryTypeTest() {
+	public void getWordsbyCategoryTest() {
 		List<WordConstruct> wordList = List.of(word);
 		assertThat(wordList).usingRecursiveComparison()
 				.isEqualTo(this.service.getWordsbyCategory(word.getWordCategory()));
@@ -67,5 +67,40 @@ public class WordServiceDBTest {
 		List<WordConstruct> wordList = List.of(word);
 		assertThat(wordList).usingRecursiveComparison().isEqualTo(this.service.returnAllWords());
 	}
+
+	@Test
+	public void getWordsTest() {
+		List<WordConstruct> wordList = List.of(word);
+		assertThat(wordList).usingRecursiveComparison().isEqualTo(this.service.getWords());
+	}
+
+	@Test
+	public void getWordsbyCategoryTypeTest() {
+		List<WordConstruct> wordList = List.of(word);
+		assertThat(wordList).usingRecursiveComparison()
+				.isEqualTo(this.service.getWordsbyCategoryType(word.getWordCategory(), word.getWordType()));
+	}
+
+	@Test
+	public void getWordsbyCategoryPriorityTest() {
+		List<WordConstruct> wordList = List.of(word);
+		assertThat(wordList).usingRecursiveComparison()
+				.isEqualTo(this.service.getWordsbyCategoryPriority(word.getWordCategory(), word.isPriorityWord()));
+	}
+
+	@Test
+	public void updatePriorityTest() {
+		WordConstruct update = new WordConstruct(1, "yosomisuru", "verb", "to look away", "everyday", false, false);
+		assertThat(update).usingRecursiveComparison().isEqualTo(this.service.updatePriority(1, update));
+	}
+
+	@Test
+	public void updateMemoriseWordTest() {
+		WordConstruct update = new WordConstruct(1, "yosomisuru", "verb", "to look away", "everyday", true, true);
+		assertThat(update).usingRecursiveComparison().isEqualTo(this.service.updateMemoriseWord(1, update));
+	}
+
+	// create new word object with updates
+	// assert against the update method
 
 }
