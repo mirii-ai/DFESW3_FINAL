@@ -65,7 +65,14 @@ combinations I could put in to really enhance the search results given back to t
 <p></p>
 
 <p>o	Screenshots of your database to prove that data is being persisted.</p>
+<p>ADDED:</p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141507090-676cbfee-472d-455c-a4ec-c1e8b118c59b.png)</p>
+<p>DELETED USING WORD ENTRY (kankyou):</p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141507242-491b0001-8ee8-4494-b139-d7a9f26361d5.png)</p>
+<p>COMPLETELY CHANGED THE WORD AT ENTRY 1</p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141507473-d2e28fc3-888a-42c5-9c90-db0878127420.png)</p>
 <p></p>
+
 <p>o	Screenshot of your test results, including coverage report.</p>
 ![image](https://user-images.githubusercontent.com/56605032/141503373-5a1f0707-0b2c-4a2f-b8c1-97366cfb4050.png)
 
