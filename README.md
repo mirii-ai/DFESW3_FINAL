@@ -32,42 +32,44 @@ by category, priority and type. I have the basic functionality down, such as sea
 combinations I could put in to really enhance the search results given back to the user.</p>
 <p></p>
 <p>o	Screenshots showing your postman requests and the output from the API.</p>
-<p>
-![image](https://user-images.githubusercontent.com/56605032/141503494-768900d3-81cd-465e-aa39-7561683d9b77.png)
-  ![image](https://user-images.githubusercontent.com/56605032/141503855-14846c57-2455-4718-868c-567f2950c646.png)
-RETRIEVE BY ID:
-  ![image](https://user-images.githubusercontent.com/56605032/141504014-292c6980-baaa-4c45-992e-753a2ec0e002.png)
-RETRIVE BY CATEGORY:
-  ![image](https://user-images.githubusercontent.com/56605032/141504151-50b4081a-589e-4abf-b525-82fc3c34710f.png)
-RETRIEVE BY TYPE [VERB in this example]:
-  ![image](https://user-images.githubusercontent.com/56605032/141504232-ff0aae1f-e7a9-4f6d-8598-e2732622d40e.png)
-RETRIEVE BY CATEGORY_TYPE:
-  ![image](https://user-images.githubusercontent.com/56605032/141504384-3c342a9a-bf63-4453-beea-53131bfccfe0.png)
-RETRIEVE BY PRIORITY [true in this example]:
-  ![image](https://user-images.githubusercontent.com/56605032/141504463-7da139ac-2b48-4dfb-a3cd-8e55af4e74ce.png)
-RETRIEVE ONLY FOREIGN WORD + CATEGORY + TYPE:
-  ![image](https://user-images.githubusercontent.com/56605032/141504592-67fafccc-94fa-49b2-8b81-12ba0cf6ab62.png)
-RETRIEVE ALL:
-  ![image](https://user-images.githubusercontent.com/56605032/141504681-5850fbc0-ffa3-4c4c-aef0-832c60b4149f.png)
-SEARCH BY FOREIGN WORD:
-  ![image](https://user-images.githubusercontent.com/56605032/141504792-4cb6826d-0981-4bda-bcbd-c6fac3340b8f.png)
-SEARCH BY CATEGORY_PRIORITY:
-  ![image](https://user-images.githubusercontent.com/56605032/141504855-ab028b92-959d-426d-b58f-c8af8129da5e.png)
-CHANGE ENTRY AT ID 10: (If I had more time I would elaborate on this one. I have already created a 'delete word at [word entry]' instead of ID, so I would also like to one day implement a 'change entry at [word entry]' as well.)
-  ![image](https://user-images.githubusercontent.com/56605032/141504976-1c6641e1-3241-46cf-86e3-65f7197290ec.png)
-FIND ID OF WORD BY WORD ENTRY: (Useful for other methods but figured it out very close to the end, haven't had much chance to use it yet.)
-  ![image](https://user-images.githubusercontent.com/56605032/141505271-90f53a9b-c410-4b7d-b884-79e77f075c37.png)
-DELETE ENTRY BY ID: (Will delete the entry 'seiji' in my runthrough)
-  ![image](https://user-images.githubusercontent.com/56605032/141505378-04fa455e-e7ce-41ce-b89c-ab7cf2725e98.png)
-DELETE ENTRY BY WORD: (Will delete the entry 'kankyou'from my database)
-  ![image](https://user-images.githubusercontent.com/56605032/141505766-08e78411-42a2-45ca-8fbf-97564ada104f.png)
-*Note: this does NOT work when there are duplicate entries of the same word in my database.
-</p>
+<p></p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141503494-768900d3-81cd-465e-aa39-7561683d9b77.png)</p>
+<p>  ![image](https://user-images.githubusercontent.com/56605032/141503855-14846c57-2455-4718-868c-567f2950c646.png)</p>
+<p>RETRIEVE BY ID:</p>
+<p>  ![image](https://user-images.githubusercontent.com/56605032/141504014-292c6980-baaa-4c45-992e-753a2ec0e002.png)</p>
+<p>RETRIVE BY CATEGORY:</p>
+ <p> ![image](https://user-images.githubusercontent.com/56605032/141504151-50b4081a-589e-4abf-b525-82fc3c34710f.png)</p>
+<p>RETRIEVE BY TYPE [VERB in this example]:</p>
+ <p> ![image](https://user-images.githubusercontent.com/56605032/141504232-ff0aae1f-e7a9-4f6d-8598-e2732622d40e.png)</p>
+<p>RETRIEVE BY CATEGORY_TYPE:</p>
+ <p> ![image](https://user-images.githubusercontent.com/56605032/141504384-3c342a9a-bf63-4453-beea-53131bfccfe0.png)</p>
+<p>RETRIEVE BY PRIORITY [true in this example]:</p>
+ <p> ![image](https://user-images.githubusercontent.com/56605032/141504463-7da139ac-2b48-4dfb-a3cd-8e55af4e74ce.png</p>
+<p>RETRIEVE ONLY FOREIGN WORD + CATEGORY + TYPE:</p>
+<p>  ![image](https://user-images.githubusercontent.com/56605032/141504592-67fafccc-94fa-49b2-8b81-12ba0cf6ab62.png)</p>
+<p>RETRIEVE ALL:</p>
+ <p> ![image](https://user-images.githubusercontent.com/56605032/141504681-5850fbc0-ffa3-4c4c-aef0-832c60b4149f.png)</p>
+<p>SEARCH BY FOREIGN WORD:</p>
+<p>  ![image](https://user-images.githubusercontent.com/56605032/141504792-4cb6826d-0981-4bda-bcbd-c6fac3340b8f.png)</p>
+<p>SEARCH BY CATEGORY_PRIORITY:</p>
+ <p> ![image](https://user-images.githubusercontent.com/56605032/141504855-ab028b92-959d-426d-b58f-c8af8129da5e.png)</p>
+<p>CHANGE ENTRY AT ID 10: (If I had more time I would elaborate on this one. I have already created a 'delete word at [word entry]' instead of ID, so I would also like to one <p>day implement a 'change entry at [word entry]' as well.)</p>
+<p>  ![image](https://user-images.githubusercontent.com/56605032/141504976-1c6641e1-3241-46cf-86e3-65f7197290ec.png)</p>
+<p>FIND ID OF WORD BY WORD ENTRY: (Useful for other methods but figured it out very close to the end, haven't had much chance to use it yet.)</p>
+ <p> ![image](https://user-images.githubusercontent.com/56605032/141505271-90f53a9b-c410-4b7d-b884-79e77f075c37.png)</p>
+<p>DELETE ENTRY BY ID: (Will delete the entry 'seiji' in my runthrough)</p>
+ <p> ![image](https://user-images.githubusercontent.com/56605032/141505378-04fa455e-e7ce-41ce-b89c-ab7cf2725e98.png)</p>
+<p>DELETE ENTRY BY WORD: (Will delete the entry 'kankyou'from my database)</p>
+ <p> ![image](https://user-images.githubusercontent.com/56605032/141505766-08e78411-42a2-45ca-8fbf-97564ada104f.png)</p>
+<p>*Note: this does NOT work when there are duplicate entries of the same word in my database.</p>
+<p></p>
+
 <p>o	Screenshots of your database to prove that data is being persisted.</p>
 <p></p>
 <p>o	Screenshot of your test results, including coverage report.</p>
 ![image](https://user-images.githubusercontent.com/56605032/141503373-5a1f0707-0b2c-4a2f-b8c1-97366cfb4050.png)
 
 <p></p>
-<p>o	Link to Jira Board - You must add Ed as collaborators on your Jira board.</p>
+<p><b>o	Link to Jira Board - You must add Ed as collaborators on your Jira board.</b></p>
+<p>https://ameliasommer.atlassian.net/jira/software/projects/DFS/boards/3/backlog</p>
 <p></p>
