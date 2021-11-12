@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+@Entity(name = "LanguageTable")
+@Table(name = "LanguageTable")
 public class WordConstruct {
 
 	@Id // primary key identifier
@@ -43,8 +45,26 @@ public class WordConstruct {
 		this.priorityWord = priorityWord;
 	}
 
+	public WordConstruct(Integer Id, String foreignWord, String wordType, String wordTranslation, String wordCategory,
+			boolean priorityWord, boolean memorisedWord) {
+		super();
+		this.Id = Id;
+		this.foreignWord = foreignWord;
+		this.wordType = wordType;
+		this.wordTranslation = wordTranslation;
+		this.wordCategory = wordCategory;
+		this.priorityWord = priorityWord;
+		this.memorisedWord = memorisedWord;
+	}
+
 	public WordConstruct() {
 		super();
+	}
+
+	public WordConstruct(Integer Id, String foreignWord) {
+		super();
+		this.Id = Id;
+		this.foreignWord = foreignWord;
 	}
 
 	public Integer getId() {
