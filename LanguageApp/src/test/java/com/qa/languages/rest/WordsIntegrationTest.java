@@ -137,6 +137,16 @@ public class WordsIntegrationTest {
 	}
 
 	@Test
+	void testgetIdByWord() throws Exception {
+		RequestBuilder request = get("/word/getIDbyWord/sakashii");
+		ResultMatcher checkStatus = status().isOk();
+		Integer recovered = 1;
+		String responseBody = this.mapper.writeValueAsString(recovered);
+		ResultMatcher checker = content().json(responseBody);
+		this.mvc.perform(request).andExpect(checkStatus).andExpect(checker);
+	}
+
+	@Test
 	void testGetWordsbyPriority() throws Exception {
 		RequestBuilder request = get("/word/priority/true");
 		ResultMatcher checkStatus = status().isOk();
@@ -221,6 +231,11 @@ public class WordsIntegrationTest {
 	@Test
 	void testDelete() throws Exception {
 		this.mvc.perform(delete("/word/delete/1")).andExpect(status().isNoContent());
+	}
+
+	@Test
+	void testDeleteWordByWord() throws Exception {
+		this.mvc.perform(delete("/word/delete/word/sakashii")).andExpect(status().isNoContent());
 	}
 // new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true, false)); //THIS IS WHAT SHOULD BE IN THE TESTS??
 }
