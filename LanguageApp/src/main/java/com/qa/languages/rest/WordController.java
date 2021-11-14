@@ -134,4 +134,9 @@ public class WordController {
 				HttpStatus.OK);
 	}
 
+//	@GetMapping("/get_five") // returns a certain number of entries randomly
+//	public ResponseEntity<List<WordConstruct>> getList() {
+//		return new ResponseEntity<List<WordConstruct>>(this.service.getList(), HttpStatus.OK);
+//	}
+
 }

@@ -139,4 +139,12 @@ public class WordServiceDB {
 		return this.repo.getIdByforeignWord(foreignWord);
 	}
 
+//	public List<WordConstruct> getList() {
+//		ArrayList<WordConstruct> returnedList = new ArrayList<>();
+//		for (int count = 0; count < 5; count++) {
+//			returnedList.add(this.repo.getReturnedListFive(new Random().nextInt(1000)).get(count));
+//		}
+//		return returnedList;
+//	} //I couldn't make this work so don't want to waste more time than necessary
+
 }

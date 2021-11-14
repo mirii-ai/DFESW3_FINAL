@@ -85,4 +85,16 @@ public class WordConstructTest {
 		WordConstruct newWord = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true, false);
 		assertTrue("TRUE", newWord instanceof WordConstruct);
 	}
+
+	@Test
+	public void TestWordConstructTwo() {
+		WordConstruct newWord = new WordConstruct(1, "sakashii", "adj", "intelligent/clever", "everyday", true);
+		assertTrue("TRUE", newWord instanceof WordConstruct);
+	}
+
+	@Test
+	public void TestWordConstructThree() {
+		WordConstruct newWord = new WordConstruct(1, "sakashii");
+		assertTrue("TRUE", newWord instanceof WordConstruct);
+	}
 }
