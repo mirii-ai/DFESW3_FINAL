@@ -9,12 +9,12 @@ I would be interested in as I myself love to learn languages and wish to see if 
 would find useful. The app should allow users to upload words to a database, and call upon words randomly (or words
 with priority) to revise a set at a time. 
 <p></p>
-<p>o	How I expected the challenge to go.</p>
+<p><b>o	How I expected the challenge to go.</b></p>
 <p>I wasn't sure how the project would go. Having only two weeks' of experience in Java, I felt that I perhaps wasn't the best
 prepared to undertake such a project. However, it has been very insightful and I have enjoyed it a lot. There are some features I know I do not
 have enough time to add at the time of writing this, but hopefully I will be able to add them in my own time.</p>
 <p></p>
-<p>o	What went well? / What didn't go as planned?</p>
+<p><b>o	What went well? / What didn't go as planned?</b></p>
 <p>What went well:</p>
 <p>I was able to create a basic functioning app! I have created the backend for a language revision app and none of the methods break when it runs.
 All of the integration and Unit Tests work as well which is really good for me in terms of confidence and will to tackle projects in the future.</p>
@@ -29,14 +29,14 @@ I need to work on what to prioritise in the future.</p>
 <p></p>
 <p>I would also like to add more features in the future. Another one that stands out to me is allowing the user to delete items from a list where every item is 'memorised', allowing the user to pick items out of their database more efficently.</p>
 <p></p>
-<p>o	Possible improvements for future revisions of the project.</p>
-<p>Adding the features I want to. One of the things I really want to work on is a method that returns a set number of results instead of everything.
-(If a user has time to only revise 10 items, they don't want the app to return everything they've inputted!)
-Another couple of features I could add are combinations of ones that already exist. For example, creating much more specific searches such as searches
+<p><b>o	Possible improvements for future revisions of the project.</b></p>
+<p>Adding the features I want to. One of the things I really want to work on is a method that returns a set number of results instead of everything. I did end up working a little bit on this in my spare time after the initial Firday deadline, however, I couldn't make it work and didn't have enough time to figure out a solution. I may work on this completely outside of QA but as it stands at the moment I don't have enough time/flexibility to work on it to the level it needs to be.
+(If a user has time to only revise 10 items, they don't want the app to return everything they've inputted!)</p>
+<p>Another couple of features I could add are combinations of ones that already exist. For example, creating much more specific searches such as searches
 by category, priority and type. I have the basic functionality down, such as searches by category/priority and category/type, but there are many more
-combinations I could put in to really enhance the search results given back to the user.</p>
+combinations I could put in to really enhance the search results given back to the user. To be a properly effective language app, there could be a potentially infinite combination of features the user could use to make their study more effective, but within the scope of a week I had to choose the ones that I thought would be most beneficial to the function of the application.</p>
 <p></p>
-<p>o	Screenshots showing your postman requests and the output from the API.</p>
+<p><b>o	Screenshots showing your postman requests and the output from the API.</b></p>
 <p></p>
 <p>![image](https://user-images.githubusercontent.com/56605032/141503494-768900d3-81cd-465e-aa39-7561683d9b77.png)</p>
 <p>  ![image](https://user-images.githubusercontent.com/56605032/141503855-14846c57-2455-4718-868c-567f2950c646.png)</p>
@@ -69,7 +69,7 @@ combinations I could put in to really enhance the search results given back to t
 <p>*Note: this does NOT work when there are duplicate entries of the same word in my database.</p>
 <p></p>
 
-<p>o	Screenshots of your database to prove that data is being persisted.</p>
+<p><b>o	Screenshots of your database to prove that data is being persisted.</b></p>
 <p>ADDED:</p>
 <p>![image](https://user-images.githubusercontent.com/56605032/141507090-676cbfee-472d-455c-a4ec-c1e8b118c59b.png)</p>
 <p>DELETED USING WORD ENTRY (kankyou):</p>
@@ -78,7 +78,7 @@ combinations I could put in to really enhance the search results given back to t
 <p>![image](https://user-images.githubusercontent.com/56605032/141507473-d2e28fc3-888a-42c5-9c90-db0878127420.png)</p>
 <p></p>
 
-<p>o	Screenshot of your test results, including coverage report.</p>
+<p><b>o	Screenshot of your test results, including coverage report.</b></p>
 <p>COVERAGE REPORT</p>
 <p>![image](https://user-images.githubusercontent.com/56605032/141503373-5a1f0707-0b2c-4a2f-b8c1-97366cfb4050.png)</p>
 <p>SCREENSHOT OF TESTS</p>
@@ -87,8 +87,21 @@ combinations I could put in to really enhance the search results given back to t
 </p>
 <p>There are, however, some issues with my code. Besides not having the full functionality that I had hoped at the beginning of the project, it runs reasonably well. HOWEVER, if there are duplicate entries of words in the database, some of the methods (and tests) do not run properly. The ID will always be unique as it is auto generated, but the word search function and other such methods fail when there is more than one entry of the same thing. It also causes problems when updating results too. Having the search by ID function is important in this respect because, although the 'search for id by word input' function will not work if there's more than one copy of a word in the database (how does it know what to choose?), there is still a possibility to remove the duplicate if you find its ID. This can be done through finding the ID by "retrieve All" in postman and finding the relevant word, then deleting by ID.</p>
 <p>Another small issue I had when testing was making sure that the prod/test file was apporpriately referenced. Also ensuring that under 'application-prod' the 'spring.jpa.hibernate.ddl-auto:' part of the code was correctly set to either create or validate.</p>
-<p>One final issue: My test didn't work properly at first becuase the name of my database was camel case. I didn't know that SQL does not like this and changed it to Language_Table (when I thought it was LanguageTable). This took a lot of time to sort out but the fix was very simple.</p>
+<p>One final issue: My test didn't work properly at first becuase the name of my database was camel case. I didn't know that SQL does not like this and changed it to Language_Table (when I thought it was LanguageTable). This took a lot of time to sort out but the fix was very simple and thankfully the instructors helped me to figure out what the issue was!</p>
 <p></p>
 <p><b>o	Link to Jira Board - You must add Ed as collaborators on your Jira board.</b></p>
 <p>https://ameliasommer.atlassian.net/jira/software/projects/DFS/boards/3/backlog</p>
+<p>I have completed all my sprints, but thankfully the backlog can still be viewed with all the relevant tasks I wished to complete and what acceptance criteria I gave them. </p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141687128-35ad335e-2e3b-4270-9228-e01aee9292cd.png)
+</p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141687156-2db9d0f8-3c6b-4f09-80fa-dc8681b1f99d.png)
+</p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141687174-9027042f-df78-466c-a13c-6519042d798e.png)
+</p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141687188-4465d2d0-414b-4886-a9d1-0917094ffc65.png)
+</p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141687239-db230980-cb12-4b70-aad7-f4044e13bb91.png)
+</p>
 <p></p>
+<p></p>![image](https://user-images.githubusercontent.com/56605032/141687267-f87bbe66-6960-4979-9a3f-1bd40576e233.png)
+
