@@ -105,4 +105,4 @@ combinations I could put in to really enhance the search results given back to t
 <p></p>
 <p></p>![image](https://user-images.githubusercontent.com/56605032/141687267-f87bbe66-6960-4979-9a3f-1bd40576e233.png)
 <p></p>
-<p>These are not screenshots of every item in my Jira board- but they are a collection of a few examples from the board in case for some reason it cannot be accessed. I have added Ed as an administrator to the project so hopefully this will not happen!</p>
+<p>These are not screenshots of every item in my Jira board- but they are a collection of a few examples from the board in case for some reason it cannot be accessed. I have added Ed as an administrator to the project so hopefully this will not happen! I used a collection of user stories and tasks to define where I wanted my project to go and what I wanted to complete next. The user stories helped me to think about functionality and what sort of code I would have to type to fulfil it, whereas the tasks helped me to remember important steps of the app building process</p>
