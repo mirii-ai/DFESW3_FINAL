@@ -104,4 +104,5 @@ combinations I could put in to really enhance the search results given back to t
 </p>
 <p></p>
 <p></p>![image](https://user-images.githubusercontent.com/56605032/141687267-f87bbe66-6960-4979-9a3f-1bd40576e233.png)
-
+<p></p>
+<p>These are not screenshots of every item in my Jira board- but they are a collection of a few examples from the board in case for some reason it cannot be accessed. I have added Ed as an administrator to the project so hopefully this will not happen!</p>
