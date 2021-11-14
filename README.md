@@ -81,6 +81,9 @@ combinations I could put in to really enhance the search results given back to t
 <p><b>o	Screenshot of your test results, including coverage report.</b></p>
 <p>COVERAGE REPORT</p>
 <p>![image](https://user-images.githubusercontent.com/56605032/141503373-5a1f0707-0b2c-4a2f-b8c1-97366cfb4050.png)</p>
+<p>Sunday:</p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141687707-1c0f3c03-d4d5-4a27-92ee-46ceda31fb30.png)
+</p>
 <p>SCREENSHOT OF TESTS</p>
 <p>![image](https://user-images.githubusercontent.com/56605032/141507744-54eed7bd-ad33-4873-95a9-b87a65dfddbd.png)</p>
 <p>![image](https://user-images.githubusercontent.com/56605032/141507807-eb58f81d-142f-4001-89aa-08555ae71a26.png)
@@ -105,4 +108,12 @@ combinations I could put in to really enhance the search results given back to t
 <p></p>
 <p></p>![image](https://user-images.githubusercontent.com/56605032/141687267-f87bbe66-6960-4979-9a3f-1bd40576e233.png)
 <p></p>
-<p>These are not screenshots of every item in my Jira board- but they are a collection of a few examples from the board in case for some reason it cannot be accessed. I have added Ed as an administrator to the project so hopefully this will not happen! I used a collection of user stories and tasks to define where I wanted my project to go and what I wanted to complete next. The user stories helped me to think about functionality and what sort of code I would have to type to fulfil it, whereas the tasks helped me to remember important steps of the app building process</p>
+<p>These are not screenshots of every item in my Jira board- but they are a collection of a few examples from the board in case for some reason it cannot be accessed. I have added Ed as an administrator to the project so hopefully this will not happen! I used a collection of user stories and tasks to define where I wanted my project to go and what I wanted to complete next. The user stories helped me to think about functionality and what sort of code I would have to type to fulfil it, whereas the tasks helped me to remember important steps of the app building process.</p>
+<p></p>
+<p><b>Custom queries:</b></p>
+<p>![image](https://user-images.githubusercontent.com/56605032/141687757-f2433fc4-899a-4405-bc12-c2214c9c055c.png)
+</p>
+<p>Unfortunately I also didn't have time to implement custom exceptions in my code. I had initial issues getting my tests to work as per an issue described above that took a long time to figure out how to solve- which meant time was taken away from potentially working on other things such as this.</p>
+<p>However, I am overall very happy with where my project is after this week. Having only learned Java for two weeks, I feel that I have learned a lot and come a long way in terms of coding knowledge and application of this knowledge. Again, while I couldn't implement everything I wanted to, I feel that at the end of the day this is OK as this is my first project in Java and issues that have 'easy fixes' but take a long time to be solved are to be expected for me at this stage. I can take this newfound knowledge and apply it to projects later, so that's fine by me as far as I am concerned!</p>
+<p></p>
+<p>Amelia Sommer</p>
